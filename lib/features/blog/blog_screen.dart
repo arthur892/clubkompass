@@ -24,7 +24,7 @@ class _BlogScreenState extends State<BlogScreen> {
             SizedBox(
               height: 8,
             ),
-            BlogpostWidget(myBlogpost: blogRepo.getBlogpost(1))
+            BlogpostWidget(myBlogpost: blogRepo.getBlogpost(8))
           ],
         ),
       ),

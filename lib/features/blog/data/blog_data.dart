@@ -21,7 +21,7 @@ class BlogData {
         title: "Besprechung der Vereinsordnung",
         author: "Lukas Weber",
         description: "Die neue Vereinsordnung wird diskutiert und abgestimmt.",
-        picturesPath: "assets/blogpost/unsplash_FQxmxlYR-YI.png",
+        picturesPath: "assets/blogpost/unsplash_FQxmxIVR-YI.png",
         authorPicturePath: "assets/profile/unsplash_L62U8oeBVgE.png"),
     Blogpost(
         blogpostId: "4",
