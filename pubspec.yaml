@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  calendar_view: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +23,7 @@ flutter:
     - assets/icon/just_icon.png
     - assets/blogpost/
     - assets/profile/
+    - assets/appimages/
 
 flutter_launcher_icons:
   android: true

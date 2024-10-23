@@ -18,7 +18,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/appimages/background.png"),
+                fit: BoxFit.cover)
+            // gradient: LinearGradient(
+            //     stops: [0.1, 0.5, 0.9],
+            //     begin: Alignment.topRight,
+            //     end: Alignment.bottomLeft,
+            //     colors: [
+            //       Color(0xFF1ABC9C),
+            //       Colors.transparent,
+            //       Color(0xFF1ABC9C)
+            //     ])
+            ),
         width: MediaQuery.sizeOf(context).width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -14,7 +14,9 @@ class BlogpostWidget extends StatefulWidget {
 
 class _BlogpostWidgetState extends State<BlogpostWidget> {
   late double widthDescription;
-  pictureData() {
+
+  Widget pictureData() {
+    //Bild anzeigen
     if (widget.myBlogpost.picturesPath != "") {
       widthDescription = 220;
       return Container(
@@ -26,25 +28,32 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
         ),
       );
     }
+    //Kein Bild anzeigen
     widthDescription = 340;
     return Container(
-      height: 120,
-      width: 5,
+      height: 50,
+      //width: 5,
       color: Colors.blue,
-      //fallbackWidth: 50,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
+      //height: 220,
+      //width: 300,
+      decoration: BoxDecoration(
+        color: Colors.greenAccent.withOpacity(0.15),
+        //borderRadius: BorderRadius.circular(20)
+      ),
+
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             Row(
               children: [
+                //Profilbild
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
@@ -61,13 +70,21 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                     ),
                   ),
                 ),
+                //Autorname
                 Expanded(
                     child: Padding(
                   padding: const EdgeInsets.fromLTRB(
                       sizeHorizontalGap, 0, sizeHorizontalGap, 0),
                   child: Text(widget.myBlogpost.author),
                 )),
-                const Icon(Icons.dangerous_rounded)
+                //Post ungelesen = Roter Punkt
+                Container(
+                  width: 20,
+                  height: 20,
+                  //color: Colors.red[600],
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.red[600]),
+                )
               ],
             ),
             SizedBox(
@@ -75,17 +92,22 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
             ),
             Row(
               children: [
+                //Grafik anzeigen
                 pictureData(),
                 SizedBox(
                   width: sizeBetweenElements,
                 ),
+                //Titel + Beschreibung
                 SizedBox(
-                  height: 120,
+                  //height: 120,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(widget.myBlogpost.title),
+                      Text(
+                        widget.myBlogpost.title,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                       Container(
                           width: widthDescription,
                           child: Text(widget.myBlogpost.description))
@@ -94,6 +116,10 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                 )
               ],
             ),
+            SizedBox(
+              height: sizeBetweenElements,
+            ),
+            //Emotes anzeigen
             const Row(
               children: [
                 Text("5"),

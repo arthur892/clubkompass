@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/blog_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/calendar_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/overview/overview_screen.dart';
 
@@ -11,10 +12,17 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-  final List<Widget> _screens = [
-    OverviewScreen(),
-    BlogScreen(),
-    CalendarScreen()
+  final BlogData blogData = BlogData();
+  late final List<Widget> _screens = [
+    OverviewScreen(
+      blogData: blogData,
+    ),
+    BlogScreen(
+      blogData: blogData,
+    ),
+    CalendarScreen(),
+    CalendarScreen(),
+    CalendarScreen(),
   ];
   int _selectedIndex = 0;
 
@@ -28,14 +36,14 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Search, Gridview"),
+        title: Text("Search, Listview, Icon"),
       ),
       bottomNavigationBar: NavigationBar(
           selectedIndex: _selectedIndex,
           onDestinationSelected: (value) {
             _onDestinationSelected(value);
           },
-          destinations: [
+          destinations: const [
             NavigationDestination(
                 icon: Icon(Icons.home_rounded), label: "Home"),
             NavigationDestination(
