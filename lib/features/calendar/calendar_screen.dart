@@ -11,7 +11,7 @@ class CalendarScreen extends StatefulWidget {
 class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
         children: [
           //CalendarControllerProvider.of(context).controller.add(CalendarEventData(event: "event1", date: DateTime(2024,10,25), title: 'Essen')),
@@ -21,7 +21,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
           //     width: MediaQuery.sizeOf(context).width,
           //     height: 600,
           //     child: MonthView()),
-          const Placeholder(),
+          Placeholder(),
         ],
       ),
     );

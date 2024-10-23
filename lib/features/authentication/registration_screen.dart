@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/overview/overview_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -19,7 +18,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/appimages/background.png"),
                 fit: BoxFit.cover)
@@ -178,7 +177,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ElevatedButton(
             onPressed: () {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => Navigation()));
+                  MaterialPageRoute(builder: (context) => const Navigation()));
             },
             child: const Text("Anmelden")),
         ElevatedButton(
