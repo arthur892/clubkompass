@@ -23,7 +23,7 @@ The app was developed as part of a 9-month training program at the AppAkademie.
 The app is currently in its design phase. The UI and navigation are complete, and data is successfully retrieved from a repository. No functionality is implemented yet, but it will be added in upcoming updates.
 
 
-<img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/landig.png" height ="400"> <img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/home.png" height ="400"> <img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/blog.png" height ="400"> <img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/calendar.png" height ="400">
+<img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/landing.png" height ="400"> <img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/home.png" height ="400"> <img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/blog.png" height ="400"> <img src= "https://github.com/arthur892/ts_4_8_1_eigene_app_ui/blob/main/screenshots/calendar.png" height ="400">
 
 
 
