@@ -3,6 +3,8 @@ import 'package:ts_4_8_1_eigene_app_ui/features/blog/blog_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/calendar_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/overview/overview_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/profile/profile_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/task/task_screen.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
@@ -21,8 +23,8 @@ class _NavigationState extends State<Navigation> {
       blogData: blogData,
     ),
     CalendarScreen(),
-    CalendarScreen(),
-    CalendarScreen(),
+    TaskScreen(),
+    ProfileScreen(),
   ];
   int _selectedIndex = 0;
 

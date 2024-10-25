@@ -8,21 +8,24 @@ class BlogData {
         blogpostId: "1",
         title: "Sommerfest Planung",
         author: "Manfred Müller",
-        description: "Die Organisation des Sommerfestes wird besprochen.",
+        description:
+            "Die Organisation des Sommerfestes wird besprochen. Wir planen den Ablauf, die Essensstände, die Spiele für Kinder und die Unterhaltung für alle Mitglieder und deren Familien.",
         picturesPath: "assets/blogpost/unsplash_BWPoWYXl9X0.png",
         authorPicturePath: "assets/profile/unsplash_h3IGtGls9OU.png"),
     Blogpost(
         blogpostId: "2",
         title: "Vereinsabend",
         author: "Sabine Schneider",
-        description: "Ein geselliger Abend für alle Mitglieder im Vereinsheim.",
+        description:
+            "Ein geselliger Abend für alle Mitglieder im Vereinsheim. Bei Snacks und Getränken können wir uns austauschen, neue Kontakte knüpfen und gemeinsame Erinnerungen schaffen.",
         picturesPath: "assets/blogpost/unsplash_EF6z_6R94zQ.png",
         authorPicturePath: "assets/profile/unsplash_HD8KlyWRYYM.png"),
     Blogpost(
         blogpostId: "3",
         title: "Besprechung der Vereinsordnung",
         author: "Lukas Weber",
-        description: "Die neue Vereinsordnung wird diskutiert und abgestimmt.",
+        description:
+            "Die neue Vereinsordnung wird diskutiert und über wichtige Punkte abgestimmt. Es gibt Raum für Verbesserungsvorschläge und Anregungen von den Vereinsmitgliedern.",
         picturesPath: "assets/blogpost/unsplash_FQxmxIVR-YI.png",
         authorPicturePath: "assets/profile/unsplash_L62U8oeBVgE.png"),
     Blogpost(
@@ -30,14 +33,15 @@ class BlogData {
         title: "Wanderausflug",
         author: "Anna Bauer",
         description:
-            "Planung für den jährlichen Wanderausflug der Vereinsmitglieder.",
+            "Planung für den jährlichen Wanderausflug der Vereinsmitglieder. Die Strecke wird festgelegt, und alle Details zur Verpflegung und Übernachtung werden besprochen.",
         picturesPath: "assets/blogpost/unsplash_hfEZsF0F4n0.png",
         authorPicturePath: "assets/profile/unsplash_XHVpWcr5grQ.png"),
     Blogpost(
         blogpostId: "5",
         title: "Jahreshauptversammlung",
         author: "Manfred Müller",
-        description: "Bericht des Vorstands und Neuwahlen im Verein.",
+        description:
+            "Bericht des Vorstands und Neuwahlen im Verein. Außerdem wird der Kassenbericht präsentiert und wichtige Entscheidungen über die Zukunft des Vereins getroffen.",
         picturesPath: "assets/blogpost/unsplash_knbGSacQYDk.png",
         authorPicturePath: "assets/profile/unsplash_h3IGtGls9OU.png"),
     Blogpost(
@@ -45,14 +49,15 @@ class BlogData {
         title: "Vereinsmeisterschaft",
         author: "Sabine Schneider",
         description:
-            "Die jährliche Vereinsmeisterschaft im Schach wird ausgetragen.",
+            "Die jährliche Vereinsmeisterschaft im Schach wird ausgetragen. Spannende Partien und Taktiken erwarten die Teilnehmer und Zuschauer gleichermaßen.",
         picturesPath: "assets/blogpost/unsplash_qCilde9fmTk.png",
         authorPicturePath: "assets/profile/unsplash_HD8KlyWRYYM.png"),
     Blogpost(
         blogpostId: "7",
         title: "Kuchenverkauf am Stadtfest",
         author: "Lukas Weber",
-        description: "Vereinsmitglieder verkaufen Kuchen auf dem Stadtfest.",
+        description:
+            "Vereinsmitglieder verkaufen Kuchen auf dem Stadtfest. Der Erlös wird für kommende Vereinsaktivitäten genutzt. Freiwillige Helfer sind herzlich willkommen.",
         picturesPath: "assets/blogpost/unsplash_xHcNz_9WkEE.png",
         authorPicturePath: "assets/profile/unsplash_L62U8oeBVgE.png"),
     Blogpost(
@@ -60,7 +65,7 @@ class BlogData {
         title: "Neumitglieder Treffen",
         author: "Anna Bauer",
         description:
-            "Ein Treffen für neue Mitglieder, um den Verein kennenzulernen.",
+            "Ein Treffen für neue Mitglieder, um den Verein und seine Angebote kennenzulernen. Wir freuen uns darauf, neue Gesichter in unserer Gemeinschaft zu begrüßen.",
         picturesPath: "assets/blogpost/unsplash_YJmF4zvHEp8.png",
         authorPicturePath: "assets/profile/unsplash_XHVpWcr5grQ.png"),
     Blogpost(
@@ -68,7 +73,7 @@ class BlogData {
         title: "Sommersportfest",
         author: "Manfred Müller",
         description:
-            "Das Sportfest mit verschiedenen Wettbewerben und Siegerehrungen.",
+            "Das große Sportfest mit verschiedenen Wettbewerben und Siegerehrungen. Die Mitglieder haben die Möglichkeit, in Teams gegeneinander anzutreten und Preise zu gewinnen.",
         picturesPath: "",
         authorPicturePath: "assets/profile/unsplash_h3IGtGls9OU.png"),
     Blogpost(
@@ -76,14 +81,15 @@ class BlogData {
         title: "Weihnachtsfeier",
         author: "Sabine Schneider",
         description:
-            "Die Weihnachtsfeier mit allen Mitgliedern und deren Familien.",
+            "Die Weihnachtsfeier mit allen Mitgliedern und deren Familien. Es wird Glühwein, Plätzchen und ein festliches Programm geben, um das Jahr gemeinsam ausklingen zu lassen.",
         picturesPath: "",
         authorPicturePath: "assets/profile/unsplash_HD8KlyWRYYM.png"),
     Blogpost(
         blogpostId: "11",
         title: "Fahrradtour",
         author: "Lukas Weber",
-        description: "Eine gemeinsame Fahrradtour durch die Umgebung.",
+        description:
+            "Eine gemeinsame Fahrradtour durch die Umgebung. Wir werden mehrere Stopps einlegen, um die Landschaft zu genießen und zusammen Zeit zu verbringen.",
         picturesPath: "assets/blogpost/unsplash_BWPoWYXl9X0.png",
         authorPicturePath: "assets/profile/unsplash_L62U8oeBVgE.png"),
     Blogpost(
@@ -91,65 +97,72 @@ class BlogData {
         title: "Frühlingsmarkt",
         author: "Anna Bauer",
         description:
-            "Der Verein stellt auf dem Frühlingsmarkt seine Aktivitäten vor.",
+            "Der Verein stellt auf dem Frühlingsmarkt seine Aktivitäten vor. Es wird auch Infostände geben, bei denen sich Besucher über kommende Veranstaltungen informieren können.",
         picturesPath: "assets/blogpost/unsplash_EF6z_6R94zQ.png",
         authorPicturePath: "assets/profile/unsplash_XHVpWcr5grQ.png"),
     Blogpost(
         blogpostId: "13",
         title: "Vereinsausflug zum See",
         author: "Manfred Müller",
-        description: "Ein gemeinsamer Ausflug zum nahegelegenen See.",
+        description:
+            "Ein gemeinsamer Ausflug zum nahegelegenen See. Dort werden wir den Tag bei Picknick und Wassersportaktivitäten gemeinsam verbringen.",
         picturesPath: "assets/blogpost/unsplash_FQxmxIVR-YI.png",
         authorPicturePath: "assets/profile/unsplash_h3IGtGls9OU.png"),
     Blogpost(
         blogpostId: "14",
         title: "Tanzkurs für Mitglieder",
         author: "Sabine Schneider",
-        description: "Ein Tanzkurs wird für Vereinsmitglieder angeboten.",
+        description:
+            "Ein Tanzkurs wird für Vereinsmitglieder angeboten. Anfänger und Fortgeschrittene sind gleichermaßen willkommen. Es wird auch eine kleine Tanzvorführung geben.",
         picturesPath: "assets/blogpost/unsplash_hfEZsF0F4n0.png",
         authorPicturePath: "assets/profile/unsplash_HD8KlyWRYYM.png"),
     Blogpost(
         blogpostId: "15",
         title: "Vorbereitung des Flohmarkts",
         author: "Lukas Weber",
-        description: "Der Verein organisiert einen Flohmarkt im Vereinsheim.",
+        description:
+            "Der Verein organisiert einen Flohmarkt im Vereinsheim. Alle Mitglieder sind eingeladen, gebrauchte Gegenstände zu verkaufen und für einen guten Zweck zu spenden.",
         picturesPath: "assets/blogpost/unsplash_knbGSacQYDk.png",
         authorPicturePath: "assets/profile/unsplash_L62U8oeBVgE.png"),
     Blogpost(
         blogpostId: "16",
         title: "Grillabend",
         author: "Anna Bauer",
-        description: "Ein gemeinsamer Grillabend im Vereinsgarten.",
+        description:
+            "Ein gemeinsamer Grillabend im Vereinsgarten. Mit Musik, Grillwürstchen und guten Gesprächen genießen wir einen entspannten Sommerabend zusammen.",
         picturesPath: "",
         authorPicturePath: "assets/profile/unsplash_XHVpWcr5grQ.png"),
     Blogpost(
         blogpostId: "17",
         title: "Karnevalsfeier",
         author: "Manfred Müller",
-        description: "Die große Karnevalsfeier mit Kostümen und Tanz.",
+        description:
+            "Die große Karnevalsfeier mit Kostümen, Tanz und Musik. Mitglieder sind eingeladen, sich kreativ zu verkleiden und an den Wettbewerben teilzunehmen.",
         picturesPath: "",
         authorPicturePath: "assets/profile/unsplash_h3IGtGls9OU.png"),
     Blogpost(
         blogpostId: "18",
         title: "Schreibwettbewerb",
         author: "Sabine Schneider",
-        description: "Ein Wettbewerb für kreative Texte der Vereinsmitglieder.",
+        description:
+            "Ein Wettbewerb für kreative Texte der Vereinsmitglieder. Jeder Teilnehmer kann seine Werke einreichen, und am Ende gibt es eine Lesung der besten Texte.",
         picturesPath: "",
         authorPicturePath: "assets/profile/unsplash_HD8KlyWRYYM.png"),
     Blogpost(
         blogpostId: "19",
         title: "Frühjahrsputz im Vereinsheim",
         author: "Lukas Weber",
-        description: "Gemeinsame Aufräumaktion im Vereinsheim und Garten.",
+        description:
+            "Gemeinsame Aufräumaktion im Vereinsheim und Garten. Wir bringen das Vereinsgelände auf Vordermann und freuen uns über jede helfende Hand.",
         picturesPath: "assets/blogpost/unsplash_qCilde9fmTk.png",
         authorPicturePath: "assets/profile/unsplash_L62U8oeBVgE.png"),
     Blogpost(
         blogpostId: "20",
-        title: "Tag der offenen Tür",
+        title: "Erste-Hilfe-Kurs",
         author: "Anna Bauer",
         description:
-            "Ein Tag für alle Interessierten, den Verein und seine Mitglieder kennenzulernen.",
-        picturesPath: "assets/blogpost/unsplash_xHcNz_9WkEE.png",
+            "Ein Erste-Hilfe-Kurs für Mitglieder, um in Notfällen richtig zu reagieren. Ein professioneller Ausbilder führt durch die wichtigsten Maßnahmen.",
+        picturesPath: "",
         authorPicturePath: "assets/profile/unsplash_XHVpWcr5grQ.png"),
   ];
 

@@ -43,7 +43,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
       //height: 220,
       //width: 300,
       decoration: BoxDecoration(
-        color: Colors.greenAccent.withOpacity(0.15),
+        color: Colors.grey.withOpacity(0.15),
         //borderRadius: BorderRadius.circular(20)
       ),
 
@@ -59,15 +59,12 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                   child: Container(
                     height: 52,
                     width: 52,
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                      child: Opacity(
-                          opacity: 0.5,
-                          child: Image.asset(
-                            widget.myBlogpost.authorPicturePath,
-                            fit: BoxFit.fill,
-                          )),
-                    ),
+                    child: Opacity(
+                        opacity: 0.5,
+                        child: Image.asset(
+                          widget.myBlogpost.authorPicturePath,
+                          fit: BoxFit.fill,
+                        )),
                   ),
                 ),
                 //Autorname

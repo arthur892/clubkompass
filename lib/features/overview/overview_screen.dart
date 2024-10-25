@@ -20,9 +20,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
               fit: BoxFit.cover)),
       child: Column(
         children: [
-          Text("Overview"),
           BlogpostWidget(myBlogpost: widget.blogData.getRandom()),
-          const Placeholder(),
         ],
       ),
     );
