@@ -83,6 +83,7 @@ class CalendarEntryWidget extends StatelessWidget {
     //Uhrzeit anhängen
     if (!entry.isAllDay) {
       buildEntries.add(Container(
+          height: containerHeight,
           padding: EdgeInsets.symmetric(horizontal: containerPaddingLR),
           child: const Text("Uhr")));
     }
