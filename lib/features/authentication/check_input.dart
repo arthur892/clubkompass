@@ -8,10 +8,10 @@ String? validPassword(String? value) {
   bool hasLowercase = value.contains(RegExp(r'[a-z]'));
   bool hasSpecialCharacters = value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
 
-  if (!hasUppercase) return "Kein Großbuchstabe";
-  if (!hasDigits) return "Keine Zahl";
-  if (!hasLowercase) return "Kein Kleinbuchstabe";
-  if (!hasSpecialCharacters) return "Kein Sonderzeichen";
+  if (!hasUppercase) return "mindestens ein Großbuchstabe";
+  if (!hasDigits) return "mindestens eine Zahl";
+  if (!hasLowercase) return "mindestens ein Kleinbuchstabe";
+  if (!hasSpecialCharacters) return "mindestens ein Sonderzeichen";
 
   return null;
 }
@@ -28,6 +28,9 @@ String? validUsername(String? value) {
 
 String? validMail(String? value) {
   if (value == null || value.isEmpty) return "Es muss etwas angegeben werden!";
-  if (!value.contains("@")) return "Gültige E-Mail eingeben";
+  bool emailValid = value.contains(RegExp(
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"));
+
+  if (!emailValid) return "Gültige E-Mail eingeben";
   return null;
 }

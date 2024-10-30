@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_screen.dart';
 // import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
 // import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 
@@ -12,7 +13,6 @@ class RegistrationScreen_old extends StatefulWidget {
 
 class _RegistrationScreen_oldState extends State<RegistrationScreen_old> {
   bool registrationSelected = false;
-  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,6 @@ class _RegistrationScreen_oldState extends State<RegistrationScreen_old> {
       appBar: AppBar(
         title: const Text("Anmeldung / Registrierung"),
       ),
-      key: formKey,
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -100,7 +99,7 @@ class _RegistrationScreen_oldState extends State<RegistrationScreen_old> {
             const SizedBox(
               height: sizeBetweenElements,
             ),
-            registrationSelected ? register() : login()
+            registrationSelected ? const RegistrationScreen() : login()
           ],
         ),
       ),
@@ -124,6 +123,8 @@ class _RegistrationScreen_oldState extends State<RegistrationScreen_old> {
         TextEditingController(text: "");
     final TextEditingController confirmPasswordController =
         TextEditingController(text: "");
+
+    final formKey = GlobalKey<FormState>();
 
     bool hidePassword = true;
 
