@@ -1,7 +1,7 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/themes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/landing_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,6 +18,6 @@ class MainApp extends StatelessWidget {
             themeMode: ThemeMode.dark,
             theme: ThemeData.light(),
             darkTheme: darkTheme,
-            home: RegistrationScreen()));
+            home: const LandingScreen()));
   }
 }

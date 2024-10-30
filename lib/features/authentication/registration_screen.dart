@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/authentication/check_input.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -9,185 +8,92 @@ class RegistrationScreen extends StatefulWidget {
   State<RegistrationScreen> createState() => _RegistrationScreenState();
 }
 
+const double paddingLR = 20;
+const heightBetween = SizedBox(
+  height: 8,
+);
+
 class _RegistrationScreenState extends State<RegistrationScreen> {
-  final double buttonRadius = 25.0;
+  final TextEditingController usernameController =
+      TextEditingController(text: "");
 
-  late Widget showScreen = buildStart();
+  final TextEditingController mailController = TextEditingController(text: "");
 
+  final TextEditingController passwordController =
+      TextEditingController(text: "");
+  final TextEditingController confirmPasswordController =
+      TextEditingController(text: "");
+
+  final _formKey = GlobalKey<FormState>();
+  bool hidePassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/appimages/background.png"),
-                fit: BoxFit.cover)
-            // gradient: LinearGradient(
-            //     stops: [0.1, 0.5, 0.9],
-            //     begin: Alignment.topRight,
-            //     end: Alignment.bottomLeft,
-            //     colors: [
-            //       Color(0xFF1ABC9C),
-            //       Colors.transparent,
-            //       Color(0xFF1ABC9C)
-            //     ])
-            ),
-        width: MediaQuery.sizeOf(context).width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            Container(
-              height: 320,
-              child: Image.asset(
-                "assets/icon/just_icon.png",
-                fit: BoxFit.cover,
-              ),
-            ),
-            Text("Clubkompass",
-                style: Theme.of(context).textTheme.headlineLarge),
-            const SizedBox(
-              height: 20,
-            ),
-            showScreen,
-            //buildChoose()
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text("Registrieren"),
       ),
-    );
-  }
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                //Username
+                TextFormField(
+                  controller: usernameController,
+                  validator: validUsername,
+                  decoration: const InputDecoration(
+                      label: Text("Benutzername"),
+                      //hintText: "Dein Benutzername",
+                      border: OutlineInputBorder()),
+                ),
+                heightBetween,
 
-//First Screen on launch where you decide to login in via sso or e-mail
-  Widget buildStart() {
-    return Container(
-      width: 300,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ElevatedButton.icon(
-            //style: ElevatedButton.styleFrom(padding: EdgeInsets.fromLTRB(25, 0, 25, 0)),
-            onPressed: () {
-              setState(() {
-                //showScreen = buildRegister();
-              });
-            },
-            label: Text("Login mit Google",
-                style: Theme.of(context).textTheme.labelLarge),
-            icon: const Icon(
-              Icons.g_mobiledata_rounded,
-              //color: Theme.of(context).primaryColor,
-            ),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              setState(() {});
-            },
-            label: Text("Login mit Apple",
-                style: Theme.of(context).textTheme.labelLarge),
-            icon: const Icon(Icons.apple_rounded),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              setState(() {
-                showScreen = buildEmail();
-              });
-            },
-            label: Text("Weiter mit E-Mail",
-                style: Theme.of(context).textTheme.labelLarge),
-            icon: const Icon(Icons.email_rounded),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget buildEmail() {
-    Widget buildLoginOrRegister = buildLoginDetails();
-    return Column(
-      children: [
-        Row(
-          children: [
-            Expanded(
-                flex: 3,
-                child: ElevatedButton(
-                  onPressed: null,
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(buttonRadius),
-                              bottomLeft: Radius.circular(buttonRadius)))),
-                  child: Text(
-                    "Anmelden",
-                    style: Theme.of(context).textTheme.labelLarge,
-                  ),
-                )),
-            const SizedBox(
-              width: 1,
-            ),
-            Expanded(
-                flex: 2,
-                child: ElevatedButton(
+                //E-Mail
+                TextFormField(
+                  controller: mailController,
+                  validator: validMail,
+                  decoration: const InputDecoration(
+                      label: Text("E-Mail Adresse"),
+                      border: OutlineInputBorder()),
+                ),
+                heightBetween,
+                //Passwort
+                TextFormField(
+                  controller: passwordController,
+                  validator: validPassword,
+                  decoration: const InputDecoration(
+                      label: Text("Passwort"), border: OutlineInputBorder()),
+                ),
+                heightBetween,
+                //Passwort bestätigen
+                TextFormField(
+                  controller: confirmPasswordController,
+                  validator: (String? value) {
+                    if (value != null && value.isNotEmpty) {
+                      if (confirmPasswordController.value !=
+                          passwordController.value) {
+                        return "Passwörter stimmen nicht überein!";
+                      }
+                    }
+                    return null;
+                  },
+                  decoration: const InputDecoration(
+                      label: Text("Passwort wiederholen"),
+                      border: OutlineInputBorder()),
+                ),
+                heightBetween,
+                ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        //registerSelected = true;
-                      });
+                      if (_formKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text("Alles Richtig")));
+                      }
                     },
-                    style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(buttonRadius),
-                                bottomRight: Radius.circular(buttonRadius)))),
-                    child: Text(
-                      "Registrierung",
-                      style: Theme.of(context).textTheme.labelLarge,
-                    )))
-          ],
-        ),
-        const SizedBox(
-          height: sizeBetweenElements,
-        ),
-        buildLoginOrRegister
-      ],
+                    child: const Text("Account erstellen"))
+              ],
+            )),
+      ),
     );
-  }
-
-  Widget buildLoginDetails() {
-    return AutofillGroup(
-        child: Column(
-      children: [
-        TextFormField(
-          decoration: const InputDecoration(
-              border: OutlineInputBorder(), labelText: "E-Mail"),
-        ),
-        const SizedBox(
-          height: sizeBetweenElements,
-        ),
-        TextFormField(
-          decoration: const InputDecoration(
-              border: OutlineInputBorder(), labelText: "Passwort"),
-        ),
-        const SizedBox(
-          height: sizeBetweenElements,
-        ),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const Navigation()));
-            },
-            child: const Text("Anmelden")),
-        ElevatedButton(
-            onPressed: () {
-              setState(() {
-                showScreen = buildStart();
-              });
-            },
-            child: const Text("Zurück"))
-      ],
-    ));
   }
 }
