@@ -99,7 +99,12 @@ class _LandingScreenState extends State<LandingScreen> {
           ElevatedButton.icon(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const RegistrationScreen()));
+                  builder: (context) => Scaffold(
+                        appBar: AppBar(
+                          title: const Text("Registrieren"),
+                        ),
+                        body: const RegistrationScreen(),
+                      )));
             },
             label: Text("Neues Konto erstellen",
                 style: Theme.of(context).textTheme.labelLarge),
