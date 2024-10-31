@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_widget.dart';
 // import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
 // import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 
@@ -99,7 +99,7 @@ class _RegistrationScreen_oldState extends State<RegistrationScreen_old> {
             const SizedBox(
               height: sizeBetweenElements,
             ),
-            registrationSelected ? const RegistrationScreen() : login()
+            registrationSelected ? const RegistrationWidget() : login()
           ],
         ),
       ),
@@ -109,30 +109,6 @@ class _RegistrationScreen_oldState extends State<RegistrationScreen_old> {
   Widget login() {
     return const Column(
       children: [Text("Login")],
-    );
-  }
-
-  Widget register() {
-    final TextEditingController usernameController =
-        TextEditingController(text: "");
-
-    final TextEditingController mailController =
-        TextEditingController(text: "");
-
-    final TextEditingController passwordController =
-        TextEditingController(text: "");
-    final TextEditingController confirmPasswordController =
-        TextEditingController(text: "");
-
-    final formKey = GlobalKey<FormState>();
-
-    bool hidePassword = true;
-
-    return Form(
-      key: formKey,
-      child: const Column(
-        children: [Text("Register")],
-      ),
     );
   }
 }

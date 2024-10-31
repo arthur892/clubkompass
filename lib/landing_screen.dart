@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_screen_old.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_widget.dart';
 import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -68,9 +68,8 @@ class _LandingScreenState extends State<LandingScreen> {
           ElevatedButton.icon(
             //style: ElevatedButton.styleFrom(padding: EdgeInsets.fromLTRB(25, 0, 25, 0)),
             onPressed: () {
-              setState(() {
-                //showScreen = buildRegister();
-              });
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => const Navigation()));
             },
             label: Text("Login mit Google",
                 style: Theme.of(context).textTheme.labelLarge),
@@ -103,7 +102,7 @@ class _LandingScreenState extends State<LandingScreen> {
                         appBar: AppBar(
                           title: const Text("Registrieren"),
                         ),
-                        body: const RegistrationScreen(),
+                        body: const RegistrationWidget(),
                       )));
             },
             label: Text("Neues Konto erstellen",

@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/authentication/check_input.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/authentication/validator.dart';
 
-class RegistrationScreen extends StatefulWidget {
-  const RegistrationScreen({super.key});
+class RegistrationWidget extends StatefulWidget {
+  const RegistrationWidget({super.key});
 
   @override
-  State<RegistrationScreen> createState() => _RegistrationScreenState();
+  State<RegistrationWidget> createState() => _RegistrationWidgetState();
 }
 
 const double paddingLR = 20;
-const heightBetween = SizedBox(
+const Widget heightBetween = SizedBox(
   height: 8,
 );
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
-  final TextEditingController usernameController =
-      TextEditingController(text: "");
+class _RegistrationWidgetState extends State<RegistrationWidget> {
+  final TextEditingController controllerUsername = TextEditingController();
 
-  final TextEditingController mailController = TextEditingController(text: "");
+  final TextEditingController controllerMail = TextEditingController();
 
-  final TextEditingController passwordController =
-      TextEditingController(text: "");
-  final TextEditingController confirmPasswordController =
-      TextEditingController(text: "");
+  final TextEditingController controllerPassword = TextEditingController();
+  final TextEditingController controllerconfirmPassword =
+      TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-  bool hidePassword = true;
+  bool obscurePassword = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,8 +34,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             children: [
               //Username
               TextFormField(
-                controller: usernameController,
-                validator: validUsername,
+                controller: controllerUsername,
+                validator: Validator.validUsername,
                 decoration: const InputDecoration(
                     label: Text("Benutzername"),
                     //hintText: "Dein Benutzername",
@@ -47,8 +45,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
               //E-Mail
               TextFormField(
-                controller: mailController,
-                validator: validMail,
+                controller: controllerMail,
+                validator: Validator.validMail,
                 decoration: const InputDecoration(
                     label: Text("E-Mail Adresse"),
                     border: OutlineInputBorder()),
@@ -56,24 +54,36 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               heightBetween,
               //Passwort
               TextFormField(
-                controller: passwordController,
-                validator: validPassword,
-                decoration: const InputDecoration(
-                    label: Text("Passwort"), border: OutlineInputBorder()),
+                controller: controllerPassword,
+                validator: Validator.validPassword,
+                obscureText: obscurePassword,
+                decoration: InputDecoration(
+                    label: const Text("Passwort"),
+                    border: const OutlineInputBorder(),
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            obscurePassword = !obscurePassword;
+                          });
+                        },
+                        icon: obscurePassword
+                            ? const Icon(Icons.visibility)
+                            : const Icon(Icons.visibility_off))),
               ),
               heightBetween,
               //Passwort bestätigen
               TextFormField(
-                controller: confirmPasswordController,
+                controller: controllerconfirmPassword,
                 validator: (String? value) {
                   if (value != null && value.isNotEmpty) {
-                    if (confirmPasswordController.value !=
-                        passwordController.value) {
+                    if (controllerconfirmPassword.value !=
+                        controllerPassword.value) {
                       return "Passwörter stimmen nicht überein!";
                     }
                   }
                   return null;
                 },
+                obscureText: obscurePassword,
                 decoration: const InputDecoration(
                     label: Text("Passwort wiederholen"),
                     border: OutlineInputBorder()),
