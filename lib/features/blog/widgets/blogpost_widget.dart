@@ -93,7 +93,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                   width: sizeBetweenElements,
                 ),
                 //Titel + Beschreibung
-                SizedBox(
+                Expanded(
                   //height: 120,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -103,9 +103,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                         widget.myBlogpost.title,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
-                      SizedBox(
-                          width: widthDescription,
-                          child: Text(widget.myBlogpost.description))
+                      Text(widget.myBlogpost.description)
                     ],
                   ),
                 )

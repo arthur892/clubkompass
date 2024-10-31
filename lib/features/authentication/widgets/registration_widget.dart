@@ -75,12 +75,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
               TextFormField(
                 controller: controllerconfirmPassword,
                 validator: (String? value) {
-                  if (value != null && value.isNotEmpty) {
+                  if (value == null || value.isEmpty) {
+                    return "Es muss etwas angegeben werden!";
+                  }
+                  if (value.isNotEmpty) {
                     if (controllerconfirmPassword.value !=
                         controllerPassword.value) {
                       return "Passwörter stimmen nicht überein!";
                     }
                   }
+
                   return null;
                 },
                 obscureText: obscurePassword,

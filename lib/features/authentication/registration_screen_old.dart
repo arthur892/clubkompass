@@ -99,7 +99,14 @@ class _RegistrationScreen_oldState extends State<RegistrationScreen_old> {
             const SizedBox(
               height: sizeBetweenElements,
             ),
-            registrationSelected ? const RegistrationWidget() : login()
+            registrationSelected
+                ? Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.15),
+                      //borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: const RegistrationWidget())
+                : const RegistrationWidget()
           ],
         ),
       ),

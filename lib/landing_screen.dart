@@ -102,7 +102,7 @@ class _LandingScreenState extends State<LandingScreen> {
                         appBar: AppBar(
                           title: const Text("Registrieren"),
                         ),
-                        body: const RegistrationWidget(),
+                        body: Container(child: const RegistrationWidget()),
                       )));
             },
             label: Text("Neues Konto erstellen",

@@ -22,11 +22,16 @@ class Validator {
     if (value == null || value.isEmpty)
       return "Es muss etwas angegeben werden!";
 
+    //if (value.contains(other))
+
+    bool hasBlankSpace = value.contains(" ");
     bool hasSpecialCharacters =
         value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
 
     if (value.length < 6) return "Mindestens 6 Zeichen";
     if (hasSpecialCharacters) return "Keine Sonderzeichen erlaubt";
+    if (hasBlankSpace) return "Keine Leerzeichen erlaubt";
+
     return null;
   }
 
