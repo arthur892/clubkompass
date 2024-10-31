@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_screen_old.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_widget.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/authentication/widgets/registration_widget.dart';
 import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 
 class LandingScreen extends StatefulWidget {

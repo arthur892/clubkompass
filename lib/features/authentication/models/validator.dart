@@ -1,6 +1,5 @@
 class Validator {
   static String? validPassword(String? value) {
-    //Control if userpasswort has: uppercase, digits, Lowercase, SpecialCharacters, minLength
     if (value == null || value.isEmpty)
       return "Es muss etwas angegeben werden!";
     if (value.length < 6) return "Mindestens 6 Zeichen";
