@@ -1,12 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/models/blogpost.dart';
 
 class BlogpostWidget extends StatefulWidget {
   final Blogpost myBlogpost;
-  BlogpostWidget({super.key, required this.myBlogpost});
+  const BlogpostWidget({super.key, required this.myBlogpost});
 
   @override
   State<BlogpostWidget> createState() => _BlogpostWidgetState();
@@ -19,7 +17,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
     //Bild anzeigen
     if (widget.myBlogpost.picturesPath != "") {
       widthDescription = 220;
-      return Container(
+      return SizedBox(
         height: 120,
         width: 120,
         child: Image.asset(
@@ -56,7 +54,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                 //Profilbild
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
-                  child: Container(
+                  child: SizedBox(
                     height: 52,
                     width: 52,
                     child: Opacity(
@@ -84,14 +82,14 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: sizeBetweenElements,
             ),
             Row(
               children: [
                 //Grafik anzeigen
                 pictureData(),
-                SizedBox(
+                const SizedBox(
                   width: sizeBetweenElements,
                 ),
                 //Titel + Beschreibung
@@ -105,7 +103,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                         widget.myBlogpost.title,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
-                      Container(
+                      SizedBox(
                           width: widthDescription,
                           child: Text(widget.myBlogpost.description))
                     ],
@@ -113,7 +111,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: sizeBetweenElements,
             ),
             //Emotes anzeigen

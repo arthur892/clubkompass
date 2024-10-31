@@ -1,7 +1,5 @@
 //import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/rendering.dart';
-import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_data.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/models/calendar.dart';
 
@@ -36,7 +34,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
               ),
             );
           },
-          separatorBuilder: (context, index) => SizedBox(
+          separatorBuilder: (context, index) => const SizedBox(
                 height: 0,
               ),
           itemCount: widget.calendarData.getAllEntries().length),
@@ -54,7 +52,7 @@ class CalendarEntryWidget extends StatelessWidget {
     //Startzeit zusammensetzen
     if (!entry.isAllDay) {
       buildEntries.add(Container(
-          padding: EdgeInsets.only(left: containerPaddingLR),
+          padding: const EdgeInsets.only(left: containerPaddingLR),
           height: containerHeight,
           color: showContainerColors ? Colors.blue : Colors.transparent,
           child: Row(
@@ -84,14 +82,14 @@ class CalendarEntryWidget extends StatelessWidget {
     if (!entry.isAllDay) {
       buildEntries.add(Container(
           height: containerHeight,
-          padding: EdgeInsets.symmetric(horizontal: containerPaddingLR),
+          padding: const EdgeInsets.symmetric(horizontal: containerPaddingLR),
           child: const Text("Uhr")));
     }
 
     if (entry.location != "") {
       buildEntries.add(Flexible(
         child: Container(
-            padding: EdgeInsets.symmetric(horizontal: containerPaddingLR),
+            padding: const EdgeInsets.symmetric(horizontal: containerPaddingLR),
             height: containerHeight,
             color: showContainerColors ? Colors.amber : Colors.transparent,
             child: Text(
@@ -111,13 +109,14 @@ class CalendarEntryWidget extends StatelessWidget {
       child: Container(
         color: showContainerColors
             ? Colors.pink
-            : Color(0xFF2C3E50).withOpacity(0.6),
+            : const Color(0xFF2C3E50).withOpacity(0.6),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Titel anzeigen + Checkbox Anzeigen
             Container(
-              padding: EdgeInsets.symmetric(horizontal: containerPaddingLR),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: containerPaddingLR),
               color: showContainerColors ? Colors.red : Colors.transparent,
               child: Row(
                 children: [
@@ -135,7 +134,7 @@ class CalendarEntryWidget extends StatelessWidget {
             //Weitere Details die in "CalendarEntry" enthalten sind anzeigen.
             buildSubtitle(),
             Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     horizontal: containerPaddingLR, vertical: 4),
                 height: containerHeight + 4,
                 color: showContainerColors ? Colors.green : Colors.transparent,
@@ -163,7 +162,7 @@ class CalendarDayWidget extends StatelessWidget {
           color: Colors.pink,
           height: 50,
           width: 50,
-          child: Text(""),
+          child: const Text(""),
         ),
       ],
     );

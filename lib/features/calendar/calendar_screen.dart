@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:calendar_view/calendar_view.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/themes.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/widgets/calendar_widget.dart';
 
@@ -17,7 +16,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                stops: [0.1, 0.5, 0.9],
+                stops: const [0.1, 0.5, 0.9],
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [ckBackgroundColor, Colors.cyan, ckBackgroundColor])),
