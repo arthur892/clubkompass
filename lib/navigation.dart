@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/blog_screen.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/calendar_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/overview/overview_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/profile/profile_screen.dart';
@@ -22,9 +22,9 @@ class _NavigationState extends State<Navigation> {
     BlogScreen(
       blogData: blogData,
     ),
-    CalendarScreen(),
-    TaskScreen(),
-    ProfileScreen(),
+    const CalendarScreen(),
+    const TaskScreen(),
+    const ProfileScreen(),
   ];
   int _selectedIndex = 0;
 
@@ -38,7 +38,7 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Search, Listview, Icon"),
+        title: const Text("Search, Listview, Icon"),
       ),
       bottomNavigationBar: NavigationBar(
           selectedIndex: _selectedIndex,

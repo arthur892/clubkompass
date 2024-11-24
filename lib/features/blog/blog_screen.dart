@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/widgets/blogpost_widget.dart';
 
 class BlogScreen extends StatefulWidget {
@@ -15,20 +15,33 @@ class _BlogScreenState extends State<BlogScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: const FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.add_rounded),
       ),
-      body: ListView.separated(
-          shrinkWrap: true,
-          separatorBuilder: (BuildContext context, int index) => SizedBox(
-                height: sizeBetweenElements,
-              ),
-          itemCount: widget.blogData.getAllBlogposts().length,
-          itemBuilder: (BuildContext context, int index) {
-            return BlogpostWidget(
-                myBlogpost: widget.blogData.getBlogpost(index));
-          }),
+      body: FutureBuilder(
+        future: widget.blogData.getAllBlogposts(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Center(child: Text('Keine Blogposts verfügbar'));
+          }
+
+          final blogposts = snapshot.data!;
+          return ListView.separated(
+            shrinkWrap: true,
+            separatorBuilder: (BuildContext context, int index) =>
+                const SizedBox(height: sizeBetweenElements),
+            itemCount: blogposts.length,
+            itemBuilder: (BuildContext context, int index) {
+              return BlogpostWidget(myBlogpost: blogposts[index]);
+            },
+          );
+        },
+      ),
     );
   }
 }

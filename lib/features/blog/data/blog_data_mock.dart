@@ -1,8 +1,9 @@
 import 'dart:math';
 
+import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_repo.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/models/blogpost.dart';
 
-class BlogData {
+class BlogData implements BlogDataRepo {
   final List<Blogpost> _blogposts = [
     Blogpost(
         blogpostId: "1",
@@ -166,16 +167,22 @@ class BlogData {
         authorPicturePath: "assets/profile/unsplash_XHVpWcr5grQ.png"),
   ];
 
-  Blogpost getBlogpost(int index) =>
-      index < _blogposts.length ? _blogposts[index] : _blogposts[0];
-
-  List<Blogpost> getAllBlogposts() {
-    return _blogposts;
+  @override
+  Future<Blogpost> getBlogpost(int index) {
+    return Future.delayed(const Duration(milliseconds: 3000),
+        () => index < _blogposts.length ? _blogposts[index] : _blogposts[0]);
   }
 
-  Blogpost getRandom() {
+  @override
+  Future<List<Blogpost>> getAllBlogposts() {
+    return Future.delayed(const Duration(milliseconds: 3000), () => _blogposts);
+  }
+
+  @override
+  Future<Blogpost> getRandom() {
     Random randomInt = Random();
     int index = randomInt.nextInt(_blogposts.length);
-    return _blogposts[index];
+    return Future.delayed(
+        const Duration(milliseconds: 3000), () => _blogposts[index]);
   }
 }

@@ -44,6 +44,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
               heightBetween,
 
               //E-Mail
+
               TextFormField(
                 controller: controllerMail,
                 validator: Validator.validMail,

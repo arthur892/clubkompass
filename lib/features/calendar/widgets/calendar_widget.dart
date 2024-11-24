@@ -1,6 +1,6 @@
 //import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_data.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_data_mock.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/models/calendar.dart';
 
 //Widget Settings
@@ -23,21 +23,34 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.separated(
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: containerPaddingLR,
-                  vertical: containerPaddingLR / 2),
-              child: CalendarEntryWidget(
-                entry: widget.calendarData.getEntry(index),
-              ),
-            );
-          },
-          separatorBuilder: (context, index) => const SizedBox(
-                height: 0,
-              ),
-          itemCount: widget.calendarData.getAllEntries().length),
+      child: FutureBuilder(
+          future: widget.calendarData.getAllEntries(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Center(child: Text('Error: ${snapshot.error}'));
+            } else if (!snapshot.hasData) {
+              return const Center(child: Text('Keine Kalenderdaten verfügbar'));
+            }
+
+            final calendarData = snapshot.data!;
+            return ListView.separated(
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: containerPaddingLR,
+                        vertical: containerPaddingLR / 2),
+                    child: CalendarEntryWidget(
+                      entry: calendarData[index],
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) => const SizedBox(
+                      height: 0,
+                    ),
+                itemCount: calendarData.length);
+          }),
     );
   }
 }

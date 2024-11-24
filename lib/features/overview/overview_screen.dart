@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/widgets/blogpost_widget.dart';
 
 class OverviewScreen extends StatefulWidget {
@@ -24,7 +24,22 @@ class _OverviewScreenState extends State<OverviewScreen> {
               fit: BoxFit.cover)),
       child: Column(
         children: [
-          BlogpostWidget(myBlogpost: widget.blogData.getRandom()),
+          FutureBuilder(
+              future: widget.blogData.getRandom(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                } else if (!snapshot.hasData) {
+                  return const Center(child: Text('Keine Blogposts verfügbar'));
+                }
+
+                final randomBlogpost = snapshot.data!;
+                return BlogpostWidget(myBlogpost: randomBlogpost);
+              })
+
+          //BlogpostWidget(myBlogpost: widget.blogData.getRandom()),
           //CalendarWidget()
         ],
       ),
