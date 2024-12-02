@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CkIconButton extends StatelessWidget {
-  CkIconButton(
+  const CkIconButton(
       {super.key,
       this.icon,
       required this.text,
       this.width = 250,
       this.onTap,
       this.fontWeight});
-  IconData? icon;
-  FontWeight? fontWeight;
-  String text;
-  double width;
-  GestureTapCallback? onTap;
+  final IconData? icon;
+  final FontWeight? fontWeight;
+  final String text;
+  final double width;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

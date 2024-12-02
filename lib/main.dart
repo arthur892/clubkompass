@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/authentication/registration_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/registration_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/landing_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 import 'package:ts_4_8_1_eigene_app_ui/theme/theme.dart';
 
 void main() {
@@ -31,7 +32,8 @@ class _MainAppState extends State<MainApp> {
 
   final router = {
     '/': (context) => const LandingScreen(),
-    '/register': (context) => const RegistrationScreen()
+    '/register': (context) => const RegistrationScreen(),
+    '/overview': (context) => const Navigation()
   };
 
   @override

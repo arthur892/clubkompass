@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/authentication/widgets/registration_widget.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/widgets/registration_widget.dart';
 import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 import 'package:ts_4_8_1_eigene_app_ui/old_stuff/registration_screen_old.dart';
 

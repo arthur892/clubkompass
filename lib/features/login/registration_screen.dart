@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/widgets/login.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -14,7 +15,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       appBar: AppBar(
         title: const Text('Anmeldung / Registrierung'),
       ),
-      body: const Placeholder(),
+      body: const Login(),
     );
   }
 }

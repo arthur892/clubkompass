@@ -42,12 +42,12 @@ class _LandingScreenState extends State<LandingScreen> {
             const SizedBox(
               height: 20,
             ),
-            CkIconButton(
+            const CkIconButton(
               icon: Icons.g_mobiledata_rounded,
               text: "Login with Google",
               fontWeight: FontWeight.bold,
             ),
-            CkIconButton(
+            const CkIconButton(
               icon: Icons.apple_rounded,
               text: "Login with Apple",
               fontWeight: FontWeight.bold,
@@ -65,7 +65,7 @@ class _LandingScreenState extends State<LandingScreen> {
               //height: 20,
               color: Colors.white,
             ),
-            CkIconButton(
+            const CkIconButton(
               text: "Weiter als Gast",
               icon: Icons.person,
               fontWeight: FontWeight.bold,
