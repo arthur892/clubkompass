@@ -33,15 +33,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
           child: Column(
             children: [
               //Username
-              TextFormField(
-                controller: controllerUsername,
-                validator: Validator.validUsername,
-                decoration: const InputDecoration(
-                    label: Text("Benutzername"),
-                    //hintText: "Dein Benutzername",
-                    border: OutlineInputBorder()),
-              ),
-              heightBetween,
+              // TextFormField(
+              //   controller: controllerUsername,
+              //   validator: Validator.validUsername,
+              //   decoration: const InputDecoration(
+              //       label: Text("Benutzername"),
+              //       //hintText: "Dein Benutzername",
+              //       border: OutlineInputBorder()),
+              // ),
+              // heightBetween,
 
               //E-Mail
 

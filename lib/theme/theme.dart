@@ -28,10 +28,10 @@ class GlobalThemeData {
     primary: Color(0xFF1ABC9C),
     onPrimary: Colors.white,
     secondary: Color(0xFFEFF3F3),
-    onSecondary: Color(0xFF322942),
+    surface: Color(0xFFFAFBFB),
     error: Colors.redAccent,
     onError: Colors.white,
-    surface: Color(0xFFFAFBFB),
+    onSecondary: Color(0xFF322942),
     onSurface: Color(0xFF241E30),
     brightness: Brightness.light,
   );

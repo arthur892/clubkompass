@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/registration_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/landing_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 import 'package:ts_4_8_1_eigene_app_ui/theme/theme.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatefulWidget {
@@ -33,7 +42,7 @@ class _MainAppState extends State<MainApp> {
   final router = {
     '/': (context) => const LandingScreen(),
     '/register': (context) => const RegistrationScreen(),
-    '/overview': (context) => const Navigation()
+    '/overview': (context) => const Overview()
   };
 
   @override

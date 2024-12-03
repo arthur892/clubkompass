@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/blog_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/calendar_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/overview/overview_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/profile/profile_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/task/task_screen.dart';
 
-class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+class Overview extends StatefulWidget {
+  const Overview({
+    super.key,
+  });
 
   @override
-  State<Navigation> createState() => _NavigationState();
+  State<Overview> createState() => _OverviewState();
 }
 
-class _NavigationState extends State<Navigation> {
+class _OverviewState extends State<Overview> {
   final BlogData blogData = BlogData();
   late final List<Widget> _screens = [
     OverviewScreen(
@@ -36,9 +40,10 @@ class _NavigationState extends State<Navigation> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).user;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Search, Listview, Icon"),
+        title: Text("Willkommen ${user!.name}"),
       ),
       bottomNavigationBar: NavigationBar(
           selectedIndex: _selectedIndex,

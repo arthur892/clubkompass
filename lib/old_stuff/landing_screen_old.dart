@@ -69,7 +69,7 @@ class _LandingScreen_oldState extends State<LandingScreen_old> {
             //style: ElevatedButton.styleFrom(padding: EdgeInsets.fromLTRB(25, 0, 25, 0)),
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const Navigation()));
+                  MaterialPageRoute(builder: (context) => const Overview()));
             },
             label: Text("Login mit Google",
                 style: Theme.of(context).textTheme.labelLarge),
@@ -187,7 +187,7 @@ class _LandingScreen_oldState extends State<LandingScreen_old> {
         ElevatedButton(
             onPressed: () {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const Navigation()));
+                  MaterialPageRoute(builder: (context) => const Overview()));
             },
             child: const Text("Anmelden")),
         ElevatedButton(

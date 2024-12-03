@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_service.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/server_user_response.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/user.dart';
 import 'package:ts_4_8_1_eigene_app_ui/ui/ck_buttons.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -9,6 +14,29 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
+  final UserService userService = UserService();
+  bool isLoading = false;
+
+  void handleLogin(BuildContext context) async {
+    setState(() {
+      isLoading = true;
+    });
+
+    ServerUserResponse response = await userService.loginGuest();
+    if (response.success) {
+      await Future.delayed(const Duration(seconds: 2));
+      navigateToOverview(response.user!);
+    }
+    setState(() {
+      isLoading = false;
+    });
+  }
+
+  void navigateToOverview(User user) {
+    Provider.of<UserProvider>(context, listen: false).setUser(user);
+    Navigator.pushReplacementNamed(context, '/overview');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,10 +93,14 @@ class _LandingScreenState extends State<LandingScreen> {
               //height: 20,
               color: Colors.white,
             ),
-            const CkIconButton(
+            CkIconButton(
               text: "Weiter als Gast",
               icon: Icons.person,
               fontWeight: FontWeight.bold,
+              onTap: () {
+                handleLogin(context);
+                //Navigator.pushReplacementNamed(context, '/overview');
+              },
             )
           ],
         ),

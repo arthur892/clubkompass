@@ -12,6 +12,19 @@ class MockUserRepository implements UserRepository {
         return ServerUserResponse(success: true, user: normalUser);
       }
     }
+
+    if (adminUser.email == email) {
+      if (adminUser.password == password) {
+        return ServerUserResponse(success: true, user: adminUser);
+      }
+    }
+
+    if (guest.email == email) {
+      if (guest.password == password) {
+        return ServerUserResponse(success: true, user: guest);
+      }
+    }
+
     return ServerUserResponse(success: false, errorMessage: "User not found");
   }
 }
