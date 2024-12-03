@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_service.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/login/models/validator.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/server_user_response.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/user.dart';
+import 'package:ts_4_8_1_eigene_app_ui/ui/ck_textfield.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -39,8 +41,12 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [],
+    return Column(
+      children: [
+        CkTextfieldLogin(
+            controller: userService.emailController,
+            validator: Validator.validMail)
+      ],
     );
   }
 }

@@ -4,12 +4,13 @@ class CkTextfieldLogin extends StatelessWidget {
   const CkTextfieldLogin(
       {super.key, required this.controller, required this.validator});
   final TextEditingController controller;
-  final String? validator;
+  final String? Function(String? value) validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: validator,
     );
   }
 }
