@@ -25,7 +25,7 @@ class CkIconButton extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: Theme.of(context).colorScheme.primary),
+            border: Border.all(color: Theme.of(context).colorScheme.onPrimary),
             color: Theme.of(context).colorScheme.primary,
           ),
           width: width,

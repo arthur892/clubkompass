@@ -51,7 +51,8 @@ class _LoginWidgetState extends State<LoginWidget> {
   }
 
   void navigateToOverview(User user) {
-    Provider.of<UserProvider>(context).setUser(user);
+    Navigator.pop(context);
+    Provider.of<UserProvider>(context, listen: false).setUser(user);
     Navigator.pushReplacementNamed(context, '/overview');
   }
 

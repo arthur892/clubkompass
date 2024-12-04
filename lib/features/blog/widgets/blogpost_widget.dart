@@ -58,7 +58,7 @@ class _BlogpostWidgetState extends State<BlogpostWidget> {
                     height: 52,
                     width: 52,
                     child: Opacity(
-                        opacity: 0.5,
+                        opacity: 1.0,
                         child: Image.asset(
                           widget.myBlogpost.authorPicturePath,
                           fit: BoxFit.fill,

@@ -24,7 +24,7 @@ class _LandingScreenState extends State<LandingScreen> {
 
     ServerUserResponse response = await userService.loginGuest();
     if (response.success) {
-      await Future.delayed(const Duration(seconds: 2));
+      //await Future.delayed(const Duration(seconds: 2));
       navigateToOverview(response.user!);
     }
     setState(() {
@@ -81,17 +81,20 @@ class _LandingScreenState extends State<LandingScreen> {
               fontWeight: FontWeight.bold,
             ),
             CkIconButton(
-              icon: Icons.email,
+              icon: Icons.email_rounded,
               text: "Weiter mit E-Mail",
               fontWeight: FontWeight.bold,
               onTap: () {
                 Navigator.pushNamed(context, '/register');
               },
             ),
-            const Divider(
-              thickness: 2,
-              //height: 20,
-              color: Colors.white,
+            const Padding(
+              padding: EdgeInsets.fromLTRB(40, 4, 40, 4),
+              child: Divider(
+                thickness: 2,
+                //height: 20,
+                color: Colors.white,
+              ),
             ),
             CkIconButton(
               text: "Weiter als Gast",
