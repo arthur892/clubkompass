@@ -80,6 +80,8 @@ class _LoginWidgetState extends State<LoginWidget> {
               TextFormField(
                 controller: userService.controllerEmail,
                 validator: Validator.validMail,
+                keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
                     label: Text("E-Mail Adresse"),
                     border: OutlineInputBorder()),
@@ -89,6 +91,8 @@ class _LoginWidgetState extends State<LoginWidget> {
               TextFormField(
                 controller: userService.controllerPassword,
                 //validator: Validator.validPassword,
+                textInputAction: TextInputAction.done,
+
                 obscureText: obscurePassword,
                 decoration: InputDecoration(
                     label: const Text("Passwort"),

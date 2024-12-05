@@ -169,13 +169,13 @@ class BlogData implements BlogDataRepo {
 
   @override
   Future<Blogpost> getBlogpost(int index) {
-    return Future.delayed(const Duration(milliseconds: 3000),
+    return Future.delayed(const Duration(milliseconds: 1000),
         () => index < _blogposts.length ? _blogposts[index] : _blogposts[0]);
   }
 
   @override
   Future<List<Blogpost>> getAllBlogposts() {
-    return Future.delayed(const Duration(milliseconds: 3000), () => _blogposts);
+    return Future.delayed(const Duration(milliseconds: 1000), () => _blogposts);
   }
 
   @override
@@ -183,6 +183,6 @@ class BlogData implements BlogDataRepo {
     Random randomInt = Random();
     int index = randomInt.nextInt(_blogposts.length);
     return Future.delayed(
-        const Duration(milliseconds: 3000), () => _blogposts[index]);
+        const Duration(milliseconds: 1000), () => _blogposts[index]);
   }
 }

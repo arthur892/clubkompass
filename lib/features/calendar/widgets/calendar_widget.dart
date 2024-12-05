@@ -7,7 +7,6 @@ import 'package:ts_4_8_1_eigene_app_ui/features/calendar/models/calendar.dart';
 const double containerHeight = 20;
 const double containerPaddingLR = 8;
 const double containerCorner = 16;
-
 const bool showContainerColors = false;
 
 class CalendarWidget extends StatefulWidget {
@@ -120,9 +119,7 @@ class CalendarEntryWidget extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(containerCorner),
       child: Container(
-        color: showContainerColors
-            ? Colors.pink
-            : const Color(0xFF2C3E50).withOpacity(0.6),
+        color: showContainerColors ? Colors.pink : Colors.grey.withOpacity(0.1),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

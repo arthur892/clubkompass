@@ -170,12 +170,12 @@ class CalendarData implements CalendarDataRepo {
 
   @override
   Future<CalendarEntry> getEntry(int index) => Future.delayed(
-      const Duration(milliseconds: 3000),
+      const Duration(milliseconds: 1000),
       () => index < _entries.length ? _entries[index] : _entries[0]);
 
   @override
   Future<List<CalendarEntry>> getAllEntries() =>
-      Future.delayed(const Duration(milliseconds: 3000), () => _entries);
+      Future.delayed(const Duration(milliseconds: 1000), () => _entries);
 
 //TODO: Widget umbauen damit Termine die an einem Tag standfinden gruppiert werden
   //List<CalendarEntry> getGroupedEntries() {}

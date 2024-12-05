@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/blog/addPost/add_post_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/registration_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/landing_screen.dart';
@@ -42,7 +43,8 @@ class _MainAppState extends State<MainApp> {
   final router = {
     '/': (context) => const LandingScreen(),
     '/register': (context) => const RegistrationScreen(),
-    '/navigation': (context) => const Navigation()
+    '/navigation': (context) => const Navigation(),
+    '/add_post': (context) => const AddPostScreen()
   };
 
   @override

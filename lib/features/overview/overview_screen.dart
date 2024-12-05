@@ -17,10 +17,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/appimages/background.png"),
-              fit: BoxFit.cover)),
+      // decoration: const BoxDecoration(
+      //     image: DecorationImage(
+      //         image: AssetImage("assets/appimages/background.png"),
+      //         fit: BoxFit.cover)),
       child: Column(
         children: [
           FutureBuilder(

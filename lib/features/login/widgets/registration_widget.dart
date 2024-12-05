@@ -48,6 +48,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
               TextFormField(
                 controller: controllerMail,
                 validator: Validator.validMail,
+                keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
                     label: Text("E-Mail Adresse"),
                     border: OutlineInputBorder()),
@@ -58,6 +60,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                 controller: controllerPassword,
                 validator: Validator.validPassword,
                 obscureText: obscurePassword,
+                textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
                     label: const Text("Passwort"),
                     border: const OutlineInputBorder(),
@@ -75,6 +78,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
               //Passwort bestätigen
               TextFormField(
                 controller: controllerconfirmPassword,
+                textInputAction: TextInputAction.done,
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return "Es muss etwas angegeben werden!";
