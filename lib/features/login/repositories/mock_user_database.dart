@@ -1,4 +1,4 @@
-import '../schema/user.dart';
+import '../../../shared/models/user.dart';
 
 // Normaler User in unserer "fiktiven Datenbank"
 final normalUser = User(

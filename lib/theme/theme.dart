@@ -27,7 +27,7 @@ class GlobalThemeData {
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: Color(0xFF1ABC9C),
     onPrimary: Colors.white,
-    secondary: Color(0xFFEFF3F3),
+    secondary: Color(0xFFF39C12),
     surface: Color(0xFFFAFBFB),
     error: Colors.redAccent,
     onError: Colors.white,
@@ -37,9 +37,9 @@ class GlobalThemeData {
   );
 
   static const ColorScheme darkColorScheme = ColorScheme(
-    primary: Color(0xFFFF8383),
+    primary: Color(0xFF1ABC9C),
     onPrimary: Colors.white,
-    secondary: Color(0xFF4D1F7C),
+    secondary: Color(0xFFF39C12),
     surface: Color(0xFF1F1929),
     error: Colors.redAccent,
     onError: Colors.white,

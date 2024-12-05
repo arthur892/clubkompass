@@ -42,7 +42,7 @@ class _MainAppState extends State<MainApp> {
   final router = {
     '/': (context) => const LandingScreen(),
     '/register': (context) => const RegistrationScreen(),
-    '/overview': (context) => const Overview()
+    '/navigation': (context) => const Navigation()
   };
 
   @override

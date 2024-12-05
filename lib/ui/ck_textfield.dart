@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 
 class CkTextfield extends StatelessWidget {
   const CkTextfield(
-      {super.key,
-      required this.controller,
-      required this.validator,
-      this.label});
+      {super.key, required this.controller, this.validator, this.label});
   final TextEditingController controller;
-  final String? Function(String? value) validator;
+  final String? Function(String? value)? validator;
   final Widget? label;
 
   @override

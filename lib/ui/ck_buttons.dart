@@ -43,7 +43,7 @@ class CkIconButton extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(text,
-                      textAlign: TextAlign.center,
+                      textAlign: textAlign,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(context).colorScheme.onPrimary,
                           fontWeight: fontWeight)),

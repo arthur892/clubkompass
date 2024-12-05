@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/user.dart';
+import 'package:ts_4_8_1_eigene_app_ui/shared/models/user.dart';
 
 class UserProvider with ChangeNotifier {
   User? _user;

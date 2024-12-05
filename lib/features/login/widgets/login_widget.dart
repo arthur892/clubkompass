@@ -4,7 +4,7 @@ import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_service.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/models/validator.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/server_user_response.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/user.dart';
+import 'package:ts_4_8_1_eigene_app_ui/shared/models/user.dart';
 import 'package:ts_4_8_1_eigene_app_ui/ui/ck_buttons.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -53,7 +53,7 @@ class _LoginWidgetState extends State<LoginWidget> {
   void navigateToOverview(User user) {
     Navigator.pop(context);
     Provider.of<UserProvider>(context, listen: false).setUser(user);
-    Navigator.pushReplacementNamed(context, '/overview');
+    Navigator.pushReplacementNamed(context, '/navigation');
   }
 
   @override

@@ -3,25 +3,28 @@ import 'package:provider/provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/blog_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/calendar/calendar_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_data_mock.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/overview/overview_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/profile/profile_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/task/task_screen.dart';
 
-class Overview extends StatefulWidget {
-  const Overview({
+class Navigation extends StatefulWidget {
+  const Navigation({
     super.key,
   });
 
   @override
-  State<Overview> createState() => _OverviewState();
+  State<Navigation> createState() => _NavigationState();
 }
 
-class _OverviewState extends State<Overview> {
+class _NavigationState extends State<Navigation> {
   final BlogData blogData = BlogData();
+  final CalendarData calendarData = CalendarData();
   late final List<Widget> _screens = [
     OverviewScreen(
       blogData: blogData,
+      calendarData: calendarData,
     ),
     BlogScreen(
       blogData: blogData,
@@ -41,6 +44,7 @@ class _OverviewState extends State<Overview> {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserProvider>(context).user;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Willkommen ${user!.name}"),
