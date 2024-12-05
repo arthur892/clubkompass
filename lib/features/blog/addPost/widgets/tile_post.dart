@@ -11,8 +11,7 @@ class TilePost extends StatelessWidget {
             child: Container(
           height: 135,
           width: 135,
-          color: Colors.white,
-          //color :Theme.of(context).colorScheme.secondary
+          color: Theme.of(context).colorScheme.onSecondary,
         )),
         Positioned(
             child: Container(
@@ -23,7 +22,7 @@ class TilePost extends StatelessWidget {
         Positioned(
             top: 20,
             child: Container(
-              height: 70,
+              height: 115,
               width: 135,
               color: Theme.of(context).colorScheme.secondary,
             ))
