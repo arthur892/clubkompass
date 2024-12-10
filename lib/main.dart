@@ -1,18 +1,19 @@
 import 'package:clubkompass/features/blog/addPost/add_post_screen.dart';
 import 'package:clubkompass/features/login/logic/user_provider.dart';
 import 'package:clubkompass/features/login/registration_screen.dart';
+import 'package:clubkompass/firebase_options.dart';
 import 'package:clubkompass/landing_screen.dart';
 import 'package:clubkompass/navigation.dart';
 import 'package:clubkompass/theme/theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:clubkompass/firebase_options.dart';
 
 void main() async {
-  // await Firebase.initializeApp(
-  //   options: DefaultFirebaseOptions.currentPlatform,
-  // );
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
     MultiProvider(
