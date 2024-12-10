@@ -1,13 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/blog/addPost/add_post_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
 import 'package:ts_4_8_1_eigene_app_ui/features/login/registration_screen.dart';
+import 'package:ts_4_8_1_eigene_app_ui/firebase_options.dart';
 import 'package:ts_4_8_1_eigene_app_ui/landing_screen.dart';
 import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
 import 'package:ts_4_8_1_eigene_app_ui/theme/theme.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     MultiProvider(
       providers: [
