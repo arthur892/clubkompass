@@ -1,8 +1,8 @@
+import 'package:clubkompass/config/sizes.dart';
+import 'package:clubkompass/features/login/widgets/registration_widget.dart';
+import 'package:clubkompass/navigation.dart';
+import 'package:clubkompass/old_stuff/registration_screen_old.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/widgets/registration_widget.dart';
-import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';
-import 'package:ts_4_8_1_eigene_app_ui/old_stuff/registration_screen_old.dart';
 
 class LandingScreen_old extends StatefulWidget {
   const LandingScreen_old({super.key});

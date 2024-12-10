@@ -1,4 +1,4 @@
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/models/calendar.dart';
+import 'package:clubkompass/features/calendar/models/calendar.dart';
 
 abstract class CalendarDataRepo {
   Future<CalendarEntry> getEntry(int index);

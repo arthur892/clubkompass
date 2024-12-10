@@ -1,4 +1,4 @@
-import 'package:ts_4_8_1_eigene_app_ui/shared/models/user.dart';
+import 'package:clubkompass/shared/models/user.dart';
 
 class ServerUserResponse {
   final User? user;

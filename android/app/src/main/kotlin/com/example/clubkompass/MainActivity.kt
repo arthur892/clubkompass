@@ -1,4 +1,4 @@
-package com.example.ts_4_8_1_eigene_app_ui
+package com.clubkompass.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 

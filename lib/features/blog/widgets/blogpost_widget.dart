@@ -1,6 +1,6 @@
+import 'package:clubkompass/config/sizes.dart';
+import 'package:clubkompass/features/blog/models/blogpost.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/models/blogpost.dart';
 
 class BlogpostWidget extends StatefulWidget {
   final Blogpost myBlogpost;

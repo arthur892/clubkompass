@@ -1,6 +1,6 @@
+import 'package:clubkompass/features/login/widgets/login_widget.dart';
+import 'package:clubkompass/features/login/widgets/registration_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/widgets/login_widget.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/widgets/registration_widget.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});

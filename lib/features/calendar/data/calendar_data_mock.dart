@@ -1,5 +1,5 @@
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_repo.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/models/calendar.dart';
+import 'package:clubkompass/features/calendar/data/calendar_repo.dart';
+import 'package:clubkompass/features/calendar/models/calendar.dart';
 
 class CalendarData implements CalendarDataRepo {
   final List<CalendarEntry> _entries = [

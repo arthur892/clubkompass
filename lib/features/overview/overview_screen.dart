@@ -1,7 +1,7 @@
+import 'package:clubkompass/features/blog/data/blog_data_mock.dart';
+import 'package:clubkompass/features/blog/widgets/blogpost_widget.dart';
+import 'package:clubkompass/features/calendar/data/calendar_data_mock.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/widgets/blogpost_widget.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_data_mock.dart';
 
 class OverviewScreen extends StatefulWidget {
   const OverviewScreen(

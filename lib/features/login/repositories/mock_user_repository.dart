@@ -1,6 +1,6 @@
-import 'package:ts_4_8_1_eigene_app_ui/features/login/repositories/mock_user_database.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/repositories/user_repository.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/schema/server_user_response.dart';
+import 'package:clubkompass/features/login/repositories/mock_user_database.dart';
+import 'package:clubkompass/features/login/repositories/user_repository.dart';
+import 'package:clubkompass/features/login/schema/server_user_response.dart';
 
 class MockUserRepository implements UserRepository {
   @override

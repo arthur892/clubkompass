@@ -1,5 +1,5 @@
+import 'package:clubkompass/features/calendar/widgets/calendar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/widgets/calendar_widget.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});

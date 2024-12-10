@@ -1,5 +1,5 @@
+import 'package:clubkompass/features/login/models/validator.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/models/validator.dart';
 
 class RegistrationWidget extends StatefulWidget {
   const RegistrationWidget({super.key});

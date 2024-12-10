@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="ts_4_8_1_eigene_app_ui"
+        android:label="ClubKompass"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

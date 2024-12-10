@@ -1,10 +1,10 @@
+import 'package:clubkompass/config/sizes.dart';
+import 'package:clubkompass/features/blog/data/blog_data_mock.dart';
+import 'package:clubkompass/features/blog/widgets/blogpost_widget.dart';
+import 'package:clubkompass/features/login/logic/user_provider.dart';
+import 'package:clubkompass/shared/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/widgets/blogpost_widget.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
-import 'package:ts_4_8_1_eigene_app_ui/shared/models/user.dart';
 
 class BlogScreen extends StatefulWidget {
   const BlogScreen({super.key, required this.blogData});

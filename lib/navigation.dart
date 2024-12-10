@@ -1,13 +1,13 @@
+import 'package:clubkompass/features/blog/blog_screen.dart';
+import 'package:clubkompass/features/blog/data/blog_data_mock.dart';
+import 'package:clubkompass/features/calendar/calendar_screen.dart';
+import 'package:clubkompass/features/calendar/data/calendar_data_mock.dart';
+import 'package:clubkompass/features/login/logic/user_provider.dart';
+import 'package:clubkompass/features/overview/overview_screen.dart';
+import 'package:clubkompass/features/profile/profile_screen.dart';
+import 'package:clubkompass/features/task/task_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/blog_screen.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_mock.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/calendar_screen.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_data_mock.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/overview/overview_screen.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/profile/profile_screen.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/task/task_screen.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({

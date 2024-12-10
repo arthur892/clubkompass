@@ -1,7 +1,7 @@
 //import 'package:calendar_view/calendar_view.dart';
+import 'package:clubkompass/features/calendar/data/calendar_data_mock.dart';
+import 'package:clubkompass/features/calendar/models/calendar.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/data/calendar_data_mock.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/calendar/models/calendar.dart';
 
 //Widget Settings
 const double containerHeight = 20;

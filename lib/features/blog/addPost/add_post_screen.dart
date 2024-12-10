@@ -1,7 +1,7 @@
+import 'package:clubkompass/features/blog/addPost/widgets/tile_gallery.dart';
+import 'package:clubkompass/features/blog/addPost/widgets/tile_picture.dart';
+import 'package:clubkompass/features/blog/addPost/widgets/tile_post.dart';
 import 'package:flutter/material.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/addPost/widgets/tile_gallery.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/addPost/widgets/tile_picture.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/addPost/widgets/tile_post.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({super.key});

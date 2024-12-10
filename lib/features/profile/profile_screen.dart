@@ -1,10 +1,10 @@
+import 'package:clubkompass/features/login/logic/user_provider.dart';
+import 'package:clubkompass/features/profile/models/controller_from_user.dart';
+import 'package:clubkompass/features/profile/widgets/profile_pic_widget.dart';
+import 'package:clubkompass/shared/models/user.dart';
+import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/login/logic/user_provider.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/profile/models/controller_from_user.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/profile/widgets/profile_pic_widget.dart';
-import 'package:ts_4_8_1_eigene_app_ui/shared/models/user.dart';
-import 'package:ts_4_8_1_eigene_app_ui/ui/ck_buttons.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

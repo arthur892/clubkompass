@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "ts_4_8_1_eigene_app_ui",
+            "name": "clubkompass",
             "request": "launch",
             "type": "dart"
         },

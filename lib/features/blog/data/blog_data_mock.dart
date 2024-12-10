@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/data/blog_data_repo.dart';
-import 'package:ts_4_8_1_eigene_app_ui/features/blog/models/blogpost.dart';
+import 'package:clubkompass/features/blog/data/blog_data_repo.dart';
+import 'package:clubkompass/features/blog/models/blogpost.dart';
 
 class BlogData implements BlogDataRepo {
   final List<Blogpost> _blogposts = [
