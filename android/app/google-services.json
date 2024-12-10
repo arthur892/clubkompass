@@ -1,1 +1,48 @@
-
+{
+  "project_info": {
+    "project_number": "238244241128",
+    "project_id": "clubkompass",
+    "storage_bucket": "clubkompass.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238244241128:android:c5725b5d6209a3852f735d",
+        "android_client_info": {
+          "package_name": "com.clubkompass.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk1pa3m2Tk_w4xwOidp0y2WOOBBBCmQi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238244241128:android:2d9c3d8b719eb2492f735d",
+        "android_client_info": {
+          "package_name": "com.clubkompass.appl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk1pa3m2Tk_w4xwOidp0y2WOOBBBCmQi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
