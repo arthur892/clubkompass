@@ -9,7 +9,12 @@
 .history
 .svn/
 migrate_working_dir/
+
+
+#API Keys
 /lib/firebase_options.dart
+/android/app/google-services.json
+/macos/Runner/GoogleService-Info
 
 
 # IntelliJ related
