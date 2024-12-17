@@ -1,4 +1,4 @@
-import 'package:clubkompass/features/login/models/validator.dart';
+import 'package:clubkompass/shared/models/validator.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationWidget extends StatefulWidget {

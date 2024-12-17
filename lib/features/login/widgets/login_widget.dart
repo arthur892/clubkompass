@@ -1,8 +1,8 @@
 import 'package:clubkompass/features/login/logic/user_provider.dart';
 import 'package:clubkompass/features/login/logic/user_service.dart';
-import 'package:clubkompass/features/login/models/validator.dart';
 import 'package:clubkompass/features/login/schema/server_user_response.dart';
 import 'package:clubkompass/shared/models/user.dart';
+import 'package:clubkompass/shared/models/validator.dart';
 import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
