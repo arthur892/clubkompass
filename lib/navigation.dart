@@ -2,7 +2,7 @@ import 'package:clubkompass/features/blog/blog_screen.dart';
 import 'package:clubkompass/features/blog/data/blog_data_mock.dart';
 import 'package:clubkompass/features/calendar/calendar_screen.dart';
 import 'package:clubkompass/features/calendar/data/calendar_data_mock.dart';
-import 'package:clubkompass/features/login/logic/user_provider.dart';
+import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
 import 'package:clubkompass/features/overview/overview_screen.dart';
 import 'package:clubkompass/features/profile/profile_screen.dart';
 import 'package:clubkompass/features/task/task_screen.dart';
@@ -47,7 +47,7 @@ class _NavigationState extends State<Navigation> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Willkommen ${user!.name}"),
+        title: Text("Willkommen ${user!.firstName}"),
       ),
       bottomNavigationBar: NavigationBar(
           selectedIndex: _selectedIndex,

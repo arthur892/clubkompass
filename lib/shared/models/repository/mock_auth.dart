@@ -1,11 +1,7 @@
 import 'package:clubkompass/shared/models/repository/interface_auth.dart';
 import 'package:clubkompass/shared/models/repository/models/app_user.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
-class AuthRepository extends InterfaceAuth {
-  final FirebaseAuth instance;
-  AuthRepository({required this.instance});
-
+class MockAuth extends InterfaceAuth {
   @override
   Future<AppUser> loginAndGetUser() {
     // TODO: implement loginAndGetUser

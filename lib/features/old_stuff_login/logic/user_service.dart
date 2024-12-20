@@ -1,5 +1,5 @@
-import 'package:clubkompass/features/login/repositories/mock_user_repository.dart';
-import 'package:clubkompass/features/login/schema/server_user_response.dart';
+import 'package:clubkompass/features/old_stuff_login/repositories/mock_user_repository.dart';
+import 'package:clubkompass/features/old_stuff_login/schema/server_user_response.dart';
 import 'package:flutter/material.dart';
 
 class UserService {

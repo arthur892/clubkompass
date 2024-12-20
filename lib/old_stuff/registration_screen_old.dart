@@ -1,5 +1,5 @@
 import 'package:clubkompass/config/sizes.dart';
-import 'package:clubkompass/features/login/widgets/registration_widget.dart';
+import 'package:clubkompass/features/old_stuff_login/widgets/registration_widget.dart';
 import 'package:flutter/material.dart';
 // import 'package:ts_4_8_1_eigene_app_ui/config/sizes.dart';
 // import 'package:ts_4_8_1_eigene_app_ui/navigation.dart';

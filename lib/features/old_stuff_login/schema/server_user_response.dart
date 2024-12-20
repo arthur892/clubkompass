@@ -1,7 +1,7 @@
-import 'package:clubkompass/shared/models/user.dart';
+import 'package:clubkompass/shared/models/repository/models/app_user.dart';
 
 class ServerUserResponse {
-  final User? user;
+  final AppUser? user;
   final bool success;
   final String? errorMessage;
 

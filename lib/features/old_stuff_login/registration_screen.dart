@@ -1,5 +1,5 @@
-import 'package:clubkompass/features/login/widgets/login_widget.dart';
-import 'package:clubkompass/features/login/widgets/registration_widget.dart';
+import 'package:clubkompass/features/old_stuff_login/widgets/login_widget.dart';
+import 'package:clubkompass/features/old_stuff_login/widgets/registration_widget.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatefulWidget {

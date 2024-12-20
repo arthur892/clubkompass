@@ -1,7 +1,7 @@
-import 'package:clubkompass/features/login/logic/user_provider.dart';
-import 'package:clubkompass/features/login/logic/user_service.dart';
-import 'package:clubkompass/features/login/schema/server_user_response.dart';
-import 'package:clubkompass/shared/models/user.dart';
+import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
+import 'package:clubkompass/features/old_stuff_login/logic/user_service.dart';
+import 'package:clubkompass/features/old_stuff_login/schema/server_user_response.dart';
+import 'package:clubkompass/shared/models/repository/models/app_user.dart';
 import 'package:clubkompass/shared/models/validator.dart';
 import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +36,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     ServerUserResponse response = await userService.login();
     if (response.success) {
       setState(() {
-        successMessage = "Willkommen ${response.user!.name}";
+        successMessage = "Willkommen ${response.user!.firstName}";
       });
       await Future.delayed(const Duration(seconds: 2));
       navigateToOverview(response.user!);
@@ -50,7 +50,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     });
   }
 
-  void navigateToOverview(User user) {
+  void navigateToOverview(AppUser user) {
     Navigator.pop(context);
     Provider.of<UserProvider>(context, listen: false).setUser(user);
     Navigator.pushReplacementNamed(context, '/navigation');

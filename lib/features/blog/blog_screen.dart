@@ -1,8 +1,8 @@
 import 'package:clubkompass/config/sizes.dart';
 import 'package:clubkompass/features/blog/data/blog_data_mock.dart';
 import 'package:clubkompass/features/blog/widgets/blogpost_widget.dart';
-import 'package:clubkompass/features/login/logic/user_provider.dart';
-import 'package:clubkompass/shared/models/user.dart';
+import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
+import 'package:clubkompass/shared/models/repository/models/app_user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +15,7 @@ class BlogScreen extends StatefulWidget {
 }
 
 class _BlogScreenState extends State<BlogScreen> {
-  late User user;
+  late AppUser user;
 
   @override
   void initState() {

@@ -1,7 +1,7 @@
-import 'package:clubkompass/features/login/logic/user_provider.dart';
-import 'package:clubkompass/features/profile/models/controller_from_user.dart';
+import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
 import 'package:clubkompass/features/profile/widgets/profile_pic_widget.dart';
-import 'package:clubkompass/shared/models/user.dart';
+import 'package:clubkompass/shared/models/repository/models/app_user.dart';
+import 'package:clubkompass/shared/models/repository/models/controller_from_user.dart';
 import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +15,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   //final TextEditingController controllerUser = TextEditingController();
-  late User user;
+  late AppUser user;
   late ControllerFromUser controller;
   final double widthOffset = 20;
 

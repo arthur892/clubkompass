@@ -1,7 +1,7 @@
-import 'package:clubkompass/features/login/logic/user_provider.dart';
-import 'package:clubkompass/features/login/logic/user_service.dart';
-import 'package:clubkompass/features/login/schema/server_user_response.dart';
-import 'package:clubkompass/shared/models/user.dart';
+import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
+import 'package:clubkompass/features/old_stuff_login/logic/user_service.dart';
+import 'package:clubkompass/features/old_stuff_login/schema/server_user_response.dart';
+import 'package:clubkompass/shared/models/repository/models/app_user.dart';
 import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +32,7 @@ class _LandingScreenState extends State<LandingScreen> {
     });
   }
 
-  void navigateToOverview(User user) {
+  void navigateToOverview(AppUser user) {
     Provider.of<UserProvider>(context, listen: false).setUser(user);
     Navigator.pushReplacementNamed(context, '/navigation');
   }
