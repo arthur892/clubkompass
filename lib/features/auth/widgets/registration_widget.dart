@@ -1,4 +1,4 @@
-import 'package:clubkompass/shared/models/validator.dart';
+import 'package:clubkompass/features/auth/validator.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationWidget extends StatefulWidget {
@@ -14,10 +14,7 @@ const Widget heightBetween = SizedBox(
 );
 
 class _RegistrationWidgetState extends State<RegistrationWidget> {
-  final TextEditingController controllerUsername = TextEditingController();
-
   final TextEditingController controllerMail = TextEditingController();
-
   final TextEditingController controllerPassword = TextEditingController();
   final TextEditingController controllerconfirmPassword =
       TextEditingController();

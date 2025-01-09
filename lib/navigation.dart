@@ -2,10 +2,10 @@ import 'package:clubkompass/features/blog/blog_screen.dart';
 import 'package:clubkompass/features/blog/data/blog_data_mock.dart';
 import 'package:clubkompass/features/calendar/calendar_screen.dart';
 import 'package:clubkompass/features/calendar/data/calendar_data_mock.dart';
-import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
 import 'package:clubkompass/features/overview/overview_screen.dart';
 import 'package:clubkompass/features/profile/profile_screen.dart';
 import 'package:clubkompass/features/task/task_screen.dart';
+import 'package:clubkompass/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

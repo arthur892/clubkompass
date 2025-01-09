@@ -1,7 +1,7 @@
-import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
 import 'package:clubkompass/features/profile/widgets/profile_pic_widget.dart';
-import 'package:clubkompass/shared/models/repository/models/app_user.dart';
-import 'package:clubkompass/shared/models/repository/models/controller_from_user.dart';
+import 'package:clubkompass/provider/user_provider.dart';
+import 'package:clubkompass/shared/models/models/app_user.dart';
+import 'package:clubkompass/shared/models/models/controller_from_user.dart';
 import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -1,7 +1,5 @@
-import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
-import 'package:clubkompass/features/old_stuff_login/logic/user_service.dart';
-import 'package:clubkompass/features/old_stuff_login/schema/server_user_response.dart';
-import 'package:clubkompass/shared/models/repository/models/app_user.dart';
+import 'package:clubkompass/provider/user_provider.dart';
+import 'package:clubkompass/shared/models/models/app_user.dart';
 import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,23 +12,23 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
-  final UserService userService = UserService();
-  bool isLoading = false;
+  // final UserService userService = UserService();
+  // bool isLoading = false;
 
-  void handleLogin(BuildContext context) async {
-    setState(() {
-      isLoading = true;
-    });
+  // void handleLogin(BuildContext context) async {
+  //   setState(() {
+  //     isLoading = true;
+  //   });
 
-    ServerUserResponse response = await userService.loginGuest();
-    if (response.success) {
-      //await Future.delayed(const Duration(seconds: 2));
-      navigateToOverview(response.user!);
-    }
-    setState(() {
-      isLoading = false;
-    });
-  }
+  //   ServerUserResponse response = await userService.loginGuest();
+  //   if (response.success) {
+  //     //await Future.delayed(const Duration(seconds: 2));
+  //     navigateToOverview(response.user!);
+  //   }
+  //   setState(() {
+  //     isLoading = false;
+  //   });
+  // }
 
   void navigateToOverview(AppUser user) {
     Provider.of<UserProvider>(context, listen: false).setUser(user);
@@ -101,7 +99,7 @@ class _LandingScreenState extends State<LandingScreen> {
               icon: Icons.person,
               fontWeight: FontWeight.bold,
               onTap: () {
-                handleLogin(context);
+                //handleLogin(context);
                 //Navigator.pushReplacementNamed(context, '/overview');
               },
             )

@@ -1,8 +1,5 @@
-import 'package:clubkompass/features/old_stuff_login/logic/user_provider.dart';
-import 'package:clubkompass/features/old_stuff_login/logic/user_service.dart';
-import 'package:clubkompass/features/old_stuff_login/schema/server_user_response.dart';
-import 'package:clubkompass/shared/models/repository/models/app_user.dart';
-import 'package:clubkompass/shared/models/validator.dart';
+import 'package:clubkompass/features/auth/validator.dart';
+import 'package:clubkompass/shared/models/repository/interface_auth.dart';
 import 'package:clubkompass/ui/ck_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,12 +16,17 @@ const Widget heightBetween = SizedBox(
 );
 
 class _LoginWidgetState extends State<LoginWidget> {
-  final UserService userService = UserService();
+// final AuthRepository auth = Provider.of<UserProvider>
+
+  // final UserService userService = UserService();
   String? successMessage;
   String? errorMessage;
   bool isLoading = false;
   final _formKey = GlobalKey<FormState>();
-  bool obscurePassword = true;
+  bool obscureTextPassword = true;
+
+  final TextEditingController controllerMail = TextEditingController();
+  final TextEditingController controllerPassword = TextEditingController();
 
   void handleLogin(BuildContext context) async {
     setState(() {
@@ -33,28 +35,20 @@ class _LoginWidgetState extends State<LoginWidget> {
       isLoading = true;
     });
 
-    ServerUserResponse response = await userService.login();
-    if (response.success) {
-      setState(() {
-        successMessage = "Willkommen ${response.user!.firstName}";
-      });
-      await Future.delayed(const Duration(seconds: 2));
-      navigateToOverview(response.user!);
-    } else {
-      setState(() {
-        errorMessage = response.errorMessage;
-      });
-    }
-    setState(() {
-      isLoading = false;
-    });
+    final InterfaceAuth auth =
+        Provider.of<InterfaceAuth>(context, listen: false);
+
+    try {
+      await auth.loginUserWithEmailAndPassword(
+          controllerMail.text, controllerPassword.text);
+    } catch (e) {}
   }
 
-  void navigateToOverview(AppUser user) {
-    Navigator.pop(context);
-    Provider.of<UserProvider>(context, listen: false).setUser(user);
-    Navigator.pushReplacementNamed(context, '/navigation');
-  }
+  // void navigateToOverview(User user) {
+  //   Navigator.pop(context);
+  //   Provider.of<UserProvider>(context, listen: false).setUser(user);
+  //   Navigator.pushReplacementNamed(context, '/navigation');
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +72,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               //E-Mail
 
               TextFormField(
-                controller: userService.controllerEmail,
+                controller: controllerMail,
                 validator: Validator.validMail,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
@@ -89,21 +83,21 @@ class _LoginWidgetState extends State<LoginWidget> {
               heightBetween,
               //Passwort
               TextFormField(
-                controller: userService.controllerPassword,
+                controller: controllerPassword,
                 //validator: Validator.validPassword,
                 textInputAction: TextInputAction.done,
 
-                obscureText: obscurePassword,
+                obscureText: obscureTextPassword,
                 decoration: InputDecoration(
                     label: const Text("Passwort"),
                     border: const OutlineInputBorder(),
                     suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            obscurePassword = !obscurePassword;
+                            obscureTextPassword = !obscureTextPassword;
                           });
                         },
-                        icon: obscurePassword
+                        icon: obscureTextPassword
                             ? const Icon(Icons.visibility)
                             : const Icon(Icons.visibility_off))),
               ),

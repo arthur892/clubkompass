@@ -1,6 +1,5 @@
+import 'package:clubkompass/features/auth/registration_screen.dart';
 import 'package:clubkompass/features/blog/addPost/add_post_screen.dart';
-import 'package:clubkompass/features/old_stuff_login/registration_screen.dart';
-import 'package:clubkompass/features/old_stuff_login/repositories/mock_user_repository.dart';
 import 'package:clubkompass/firebase_options.dart';
 import 'package:clubkompass/landing_screen.dart';
 import 'package:clubkompass/navigation.dart';
@@ -20,8 +19,8 @@ void main() async {
   );
 
   final FirebaseAuth instanceAuth = FirebaseAuth.instance;
-  final repositoryAuth = auth.AuthRepository(instance: instanceAuth);
-  final repositoryMock = MockUserRepository();
+  final repositoryAuth = auth.AuthRepository(firebaseAuth: instanceAuth);
+  //final repositoryMock = MockUserRepository();
 
   runApp(
     MultiProvider(

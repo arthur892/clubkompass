@@ -1,32 +1,65 @@
+import 'dart:developer';
+
 import 'package:clubkompass/shared/models/repository/interface_auth.dart';
-import 'package:clubkompass/shared/models/repository/models/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepository extends InterfaceAuth {
-  final FirebaseAuth instance;
-  AuthRepository({required this.instance});
+  final FirebaseAuth firebaseAuth;
+  AuthRepository({required this.firebaseAuth});
 
-  @override
-  Future<AppUser> loginAndGetUser() {
-    // TODO: implement loginAndGetUser
-    throw UnimplementedError();
+  UserModel? _userFromFirebase(User? user) {
+    if (user == null) {
+      return null;
+    }
+    return UserModel(uid: user.uid, email: user.email!);
   }
 
   @override
-  Future<void> logoutUser() {
+  Future<UserModel?> loginUserWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      final UserCredential credentials = await firebaseAuth
+          .signInWithEmailAndPassword(email: email, password: password);
+      return _userFromFirebase(credentials.user);
+    } catch (e) {
+      log("Error loginUserWithEmailAndPassword");
+    }
+    return null;
+  }
+
+  @override
+  Future<void> signOut() {
     // TODO: implement logoutUser
     throw UnimplementedError();
   }
 
   @override
-  Future<void> sighInGoogle() {
+  Future<void> sighUpGoogle() {
     // TODO: implement sighInGoogle
     throw UnimplementedError();
   }
 
   @override
-  Future<void> signInMail() {
-    // TODO: implement signInMail
-    throw UnimplementedError();
+  Future<UserModel?> createUserWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      final cred = await firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      return _userFromFirebase(cred.user);
+    } catch (e) {
+      log("Error createUserWithEmailAndPassword");
+    }
+    return null;
+  }
+
+  @override
+  Stream<UserModel?> get onAuthStateChanged {
+    return firebaseAuth.authStateChanges().map(_userFromFirebase);
+  }
+
+  @override
+  Future<UserModel?> currentUser() async {
+    final user = firebaseAuth.currentUser;
+    return _userFromFirebase(user);
   }
 }

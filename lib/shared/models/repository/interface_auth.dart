@@ -1,8 +1,18 @@
-import 'package:clubkompass/shared/models/repository/models/app_user.dart';
+class UserModel {
+  final String uid;
+  final String email;
+  UserModel({required this.uid, required this.email});
+}
 
 abstract class InterfaceAuth {
-  Future<AppUser> loginAndGetUser();
-  Future<void> logoutUser();
-  Future<void> signInMail();
-  Future<void> sighInGoogle();
+  Stream<UserModel?> get onAuthStateChanged;
+  Future<UserModel?> currentUser();
+
+  Future<UserModel?> loginUserWithEmailAndPassword(
+      String email, String password);
+
+  Future<UserModel?> createUserWithEmailAndPassword(
+      String email, String password);
+  Future<void> sighUpGoogle();
+  Future<void> signOut();
 }

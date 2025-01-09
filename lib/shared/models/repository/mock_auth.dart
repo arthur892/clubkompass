@@ -1,28 +1,39 @@
 import 'package:clubkompass/shared/models/repository/interface_auth.dart';
-import 'package:clubkompass/shared/models/repository/models/app_user.dart';
 
 class MockAuth extends InterfaceAuth {
   @override
-  Future<AppUser> loginAndGetUser() {
-    // TODO: implement loginAndGetUser
+  Future<UserModel?> createUserWithEmailAndPassword(
+      String email, String password) {
+    // TODO: implement createUserWithEmailAndPassword
     throw UnimplementedError();
   }
 
   @override
-  Future<void> logoutUser() {
+  Future<UserModel?> loginUserWithEmailAndPassword(
+      String email, String password) {
+    // TODO: implement loginUserWithEmailAndPassword
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signOut() {
     // TODO: implement logoutUser
     throw UnimplementedError();
   }
 
   @override
-  Future<void> sighInGoogle() {
-    // TODO: implement sighInGoogle
+  // TODO: implement onAuthStateChanged
+  Stream<UserModel?> get onAuthStateChanged => throw UnimplementedError();
+
+  @override
+  Future<void> sighUpGoogle() {
+    // TODO: implement sighUpGoogle
     throw UnimplementedError();
   }
 
   @override
-  Future<void> signInMail() {
-    // TODO: implement signInMail
+  Future<UserModel?> currentUser() {
+    // TODO: implement currentUser
     throw UnimplementedError();
   }
 }

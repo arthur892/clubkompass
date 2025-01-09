@@ -1,4 +1,4 @@
-import 'package:clubkompass/shared/models/repository/models/app_user.dart';
+import 'package:clubkompass/shared/models/models/app_user.dart';
 import 'package:flutter/material.dart';
 
 class UserProvider with ChangeNotifier {
